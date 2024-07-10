@@ -22,7 +22,6 @@ class CategoryController extends Controller
         $articles = $category->articles()->with('category')->get();
         $subCategoryArticles = $this->getSubCategoryArticles($category);
         $allArticles = $articles->merge($subCategoryArticles);
-        // return response()->json(['category' => $category, 'articles' => $allArticles]);
         return response()->json([
             'category' => new CategoryResource($category),
             'articles' => ArticleResource::collection($category->articles),

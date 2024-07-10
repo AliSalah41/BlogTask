@@ -23,13 +23,6 @@ class ArticleController extends Controller
 
     public function update(UpdateArticaleRequest $request, Article $article)
     {
-        // $validated = $request->validate([
-        //     'title' => 'sometimes|required|string|max:255',
-        //     'content' => 'sometimes|required',
-        //     'category_id' => 'sometimes|required|exists:categories,id',
-        //     'hashtags' => 'nullable|array',
-        // ]);
-
         $article->update([
             'title' => $request->title,
             'content' => $request->content,
